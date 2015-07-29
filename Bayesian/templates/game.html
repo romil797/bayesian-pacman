@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Bae game</title>
+</head>
+<body>
+    <h1>Let's play</h1>
+
+    <table>
+        {% for row in tMat %}
+            <tr>
+                {% for cell in row %}
+                <td>{{ cell }}
+                </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <hr />
+
+    <table>
+        {% for row in dMat %}
+            <tr>
+                {% for cell in row %}
+                <td>{{ cell }}
+                </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <hr />
+    <form action="#" method="get">
+        <table>
+            {% for row in mMat %}
+            <tr>
+                {% for cell in row %}
+                <td>
+                    <input type="submit" value="{{ cell }}" name="{{ forloop.parentloop.counter0 }},{{ forloop.counter0 }}" />
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+    <hr />
+    The treasure is NOT here: {{ location }}
+</body>
+</html>
